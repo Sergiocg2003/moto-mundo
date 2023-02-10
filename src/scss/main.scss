@@ -1,9 +1,9 @@
-@import './base/reset';
-@import './base/typo';
+@import './base/_reset.scss';
+@import './base/_typo.scss';
 
-@import './components/menu.scss';
+@import './components/_menu.scss';
 
-@import './layout/header.scss';
-@import './layout/footer.scss';
+@import './layout/_header.scss';
+@import './layout/_footer.scss';
 
-@import './utilities/variables.scss';
+@import './utilities/_variables.scss';
