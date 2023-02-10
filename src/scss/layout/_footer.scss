@@ -1,0 +1,41 @@
+.piePagina{
+    height: 10vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-primario;
+
+    /*Aqui le estamos dando un estilo a la lista de logos de nuestras redes sociales*/
+    ul:first-child{
+        margin-inline-start: 2%;
+        margin-inline-end: 2%;
+        li{
+            display: inline;
+            padding-left: 2px;
+            padding-right: 2px;
+            font-size: 120%;
+            color: $color-letra;
+        }
+    }
+
+    /*Aque le estamos dando un tamaño a la foto que esta en el centro de nuestro footer*/
+    p{
+        font-family: $fuenteTitulo;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    /*En esta parte de aqui le estamos dando estilo a la lista que tenemos de la politica de cookies y los avisos legales*/
+    ul:last-child{
+        margin-inline-end: 2%;
+        li{
+            display: inline;
+            padding-left: 10px;
+            padding-right: 10px;
+            color: $color-letra;
+            font-family: $fuente;
+            font-size: 15px;
+        }
+    }
+}

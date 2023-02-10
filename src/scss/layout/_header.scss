@@ -1,0 +1,49 @@
+/*En este archivo de css se encuentran los estilos correspondientes a los diferentes headers de nuestra pagina.*/
+.main{
+    height: 13vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-primario;
+
+    /*Aqui le damos un tamaño a las imagenes de los logos y una posicion con los margenes*/
+    &__logos{
+        width: 400px;
+        height: 90px;
+        margin-left: 20px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        &__logo{
+            height: 100%;
+        }
+
+        &__nombre{
+            font-family: $fuenteTitulo;
+            font-weight: bold;
+            font-size: 50px;
+            width: 300px;
+        }
+    }
+    
+    /*En esta parte le damos los estilos y el posicionamiento a nuestro menú de navegación*/
+    &__navegacion{
+        margin-inline-end: 2%;
+        &__opcion{
+            display: inline;
+            font-weight: bold;
+            font-size: 15px;
+            padding-left: 5px;
+            padding-right: 10px;
+            a{
+                font-family: Roboto, sans-serif;
+                font-weight: bold;
+                text-decoration: none;
+                color: $color-letra;
+            }
+        }
+    }
+}
