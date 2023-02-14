@@ -7,15 +7,17 @@
     background-color: $color-primario;
 
     /*Aqui le estamos dando un estilo a la lista de logos de nuestras redes sociales*/
-    ul:first-child{
+    &__logos{
+        list-style: none;
         margin-inline-start: 2%;
         margin-inline-end: 2%;
-        li{
+        &__elemento{
             display: inline;
-            padding-left: 2px;
-            padding-right: 2px;
-            font-size: 120%;
-            color: $color-letra;
+            padding: 2px;
+            &__logo{
+                height: 20px;
+                width: 20px;
+            }
         }
     }
 

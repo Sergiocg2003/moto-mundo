@@ -1,17 +1,19 @@
 <template>
   <headerComponente/>
-  <h1>Hola</h1>
+  <mainPrincipal/>
   <footerComponente/>
 </template>
 
 <script>
 import headerComponente from './components/Header.vue';
+import mainPrincipal from './components/MainPrincipal.vue';
 import footerComponente from './components/Footer.vue';
 
 export default {
   name: 'App',
   components: {
     headerComponente,
+    mainPrincipal,
     footerComponente
   }
 }

@@ -1,0 +1,75 @@
+/*Aqui encontramos el css referentes al main del body junto con su variantes para móvil de la pagina principal*/
+
+.Principal{
+    height: 77vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-color: $color-fondo;
+
+    /*Con esto le estamos dando un tamaño y un estilo de letra a nuestro titulo de la pagina*/
+    &__Titulo{
+        font-size: 45px;
+        font-family: $fuente;
+        color: $color-letra-cuerpo;
+        z-index: 1;
+    }
+
+    /*Aqui le damos un estilo al input del buscador y a su boton que son los dos componentes del mismo */
+    &__Buscador{
+        display: flex;
+        flex-flow: row wrap;
+        padding-bottom: 20px;
+        justify-content: center;
+        align-items: center;
+        li:first-child{
+            width: 500px;
+            display: inline;
+            z-index: 2;
+            input{
+                width: 100%;
+                height: 70px;
+                border-radius: 50px 0px 0px 50px;
+                border: solid 5px;
+                background: $color-buscador;
+                text-indent: 10px;
+            }
+        }
+        li:last-child{
+            display: inline;
+            z-index: 2;
+            a{
+                width: 100%;
+                height: 70px;
+                padding: 6px;
+                display: inherit;
+                border-radius: 0px 50px 50px 0px;
+                border: solid 5px;
+                background-color: $color-primario;
+                &:hover{
+                    background-color: $color-hover;
+                    transition-property: all;
+                    transition-duration: 0.5s;
+                    transition-timing-function: linear;
+                }
+                img{
+                    z-index: -1;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    &__Imagen{
+        position: absolute;
+        width: 300px;
+        right: 0px;
+        top: 250px;
+        z-index: 0;
+
+        opacity: 0.37;
+    }
+}

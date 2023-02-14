@@ -1,9 +1,9 @@
 <template>
     <footer class="piePagina">
-        <ul>
-          <li><span class="fa-brands fa-square-facebook"></span></li>
-          <li><span class="fa-brands fa-instagram"></span></li>
-          <li><span class="fa-brands fa-square-twitter"></span></li>
+        <ul class="piePagina__logos">
+          <li class="piePagina__logos__elemento"><img class="piePagina__logos__elemento__logo" src="../assets/logo_twitter.png" /></li>
+          <li class="piePagina__logos__elemento"><img class="piePagina__logos__elemento__logo" src="../assets/logo_facebook.png" /></li>
+          <li class="piePagina__logos__elemento"><img class="piePagina__logos__elemento__logo" src="../assets/logo_instagram.png" /></li>
         </ul>
         <p>Moto Mundo</p>
         <ul>
