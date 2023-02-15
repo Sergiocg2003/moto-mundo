@@ -17,14 +17,19 @@
         justify-content: space-between;
         align-items: center;
 
-        &__logo{
-            height: 100%;
+        &__enlace{
+            text-decoration: none;
+            width: 68px;
+            height: 90px;
+            &__logo{
+                height: 100%;
+            }
         }
 
         &__nombre{
             font-family: $fuenteTitulo;
             font-weight: bold;
-            font-size: 50px;
+            font-size: 45px;
             width: 300px;
         }
     }

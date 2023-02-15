@@ -1,13 +1,13 @@
 <template>
     <header class="main">
         <div class="main__logos">
-          <img class="main__logos__logo" src="../assets/logo.png" />
+          <router-link to="/" class="main__logos__enlace"><img class="main__logos__enlace__logo" src="../assets/logo.png" /></router-link>
           <p class="main__logos__nombre">Moto Mundo</p>
         </div>
         <nav class="main__navegacion">
             <ul>
                 <li class="main__navegacion__opcion">Listado</li>
-                <li class="main__navegacion__opcion">Contacto</li>
+                <li class="main__navegacion__opcion"><router-link to="/contacto">Contacto</router-link></li>
                 <li class="main__navegacion__opcion">Log in</li>
             </ul>
         </nav>

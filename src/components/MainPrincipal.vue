@@ -1,4 +1,5 @@
 <template>
+    <headerBasico/>
     <main class="Principal">
         <h1 class="Principal__Titulo">Buscador de motos:</h1>
         <ul class="Principal__Buscador">
@@ -11,7 +12,11 @@
 </template>
 
 <script>
+    import headerBasico from "./Header.vue";
     export default{
-        name: 'mainPrincipal'
-    } 
+        name: 'mainPrincipal',
+        components: {
+            headerBasico
+        }
+    }
 </script>
