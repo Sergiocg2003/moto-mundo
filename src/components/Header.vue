@@ -8,7 +8,7 @@
             <ul>
                 <li class="main__navegacion__opcion">Listado</li>
                 <li class="main__navegacion__opcion"><router-link to="/contacto">Contacto</router-link></li>
-                <li class="main__navegacion__opcion">Log in</li>
+                <li class="main__navegacion__opcion"><router-link to="/registro">Login</router-link></li>
             </ul>
         </nav>
     </header>
