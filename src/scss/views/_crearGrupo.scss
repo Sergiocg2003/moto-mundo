@@ -1,0 +1,116 @@
+/*En este css le estamos dando estilo a todos los elementos que forman parte de las paginas de
+registro y contacto*/
+.crearClub{
+    height: 77vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    &__Menu{
+        flex-flow: column wrap;
+        background-color: $color-primario;
+        height: 100%;
+        width: 15%;
+        ul{
+            list-style: none;
+            margin: 10px;
+            margin-top:20px;
+            li{
+                margin-bottom: 10px;
+                a{
+                    font-family: $fuente;
+                    text-decoration: none;
+                    color: $color-letra-cuerpo;
+                }
+            }
+        }
+    }
+
+    /*En este elemento le damos estilo a los elementos que forman nustros formularios ya sea el de contacto o el de login o registro*/
+    &__formulario{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        text-align: center;
+        &__Titulo{
+            font-size: 50px;
+            font-family: $fuente;
+            margin-bottom: 20px;
+        }
+        &__texto{
+            font-size: 20px;
+            font-family: $fuente;
+        }
+        &__rellenable{
+            width: 100%;
+            height: 40px;
+            margin-bottom: 15px;
+            border-radius: 25px;
+            border: 0;
+            background: $color-buscador;
+            padding: 10px;
+        }
+        &__explicacion{
+            width: 100%;
+            height: 150px;
+            margin-bottom: 15px;
+            border-radius: 25px;
+            border: 0;
+            resize: none;
+            background: $color-buscador;
+            padding: 15px;
+        }
+
+        /*Aqui se le da estilo al boton que hemos creado para enviar el formulario ademas de darle un estilo a su hover*/
+        &__boton{
+            font-family: $fuente;
+            font-size: 15px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            padding: 7.5px;
+            display: inherit;
+            border-radius: 10px;
+            border: 0;
+            background-color: $color-primario;
+            &:hover{
+                background-color: $color-hover;
+                transition-property: all;
+                transition-duration: 0.5s;
+                transition-timing-function: linear;
+            }
+        }
+    }
+
+    /*En este elemento le damos un estilo a la frase que nos permite cambiar entre la pagina de login y la de registro*/
+    &__opcion{
+        font-size: 16px;
+        font-family: $fuente;
+        a{
+          text-decoration: none;
+          font-family: $fuente;
+          color: $color-hover;
+          font-weight: bold;
+        }
+    }
+
+    &__Vacio{
+        height: 100%;
+        width: 15%;
+    }
+
+    /*Aqui estamos modificando la imagen que vemos en el fondo de nuestra pagina*/
+    &__Imagen{
+        position: absolute;
+        width: 300px;
+        right: 0px;
+        top: 250px;
+        z-index: 0;
+
+        opacity: 0.37;
+    }
+}

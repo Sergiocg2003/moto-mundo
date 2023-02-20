@@ -57,7 +57,6 @@ import headerLogin from "./HeaderLogin.vue";
                             if(this.contraseña == this.contraseña2){
                                 if(expRegContraseña.test(this.contraseña)){
                                     localStorage.setItem("Usuario", this.usuario)
-                                    this.$router.push("/registrado")
 
                                     const NuevoUsuario = {
                                         "correo": this.correo,

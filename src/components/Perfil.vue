@@ -6,7 +6,7 @@
                 <li><router-link to="/perfil">Perfil</router-link></li>
                 <li><router-link to="/listadoRegistrado">Listado</router-link></li>
                 <li><router-link to="/BuscadorAmigos">Buscador de Usuario</router-link></li>
-                <li>Crear club</li>
+                <li><router-link to="/CrearClub">Crear Club</router-link></li>
             </ul>
         </div>
         <div class="Perfil__Contenedor" >

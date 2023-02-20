@@ -11,6 +11,7 @@ import listadoReg from './components/ListadoRegistrado.vue'
 import motoRegistrado from './components/MotoRegistrado.vue'
 import perfil from './components/Perfil.vue'
 import buscadorAmigos from './components/BuscadorAmigos.vue'
+import crearClub from './components/CrearClub.vue'
 
 const routes = [
   { path:'/', component: mainPrincipal },
@@ -22,7 +23,8 @@ const routes = [
   { path:'/listadoRegistrado', component: listadoReg },
   { path:'/motoRegistrado/:nombre', component: motoRegistrado },
   { path:'/perfil', component: perfil },
-  { path:'/BuscadorAmigos', component: buscadorAmigos}
+  { path:'/BuscadorAmigos', component: buscadorAmigos },
+  { path:'/CrearClub', component: crearClub}
 
 ]
 
