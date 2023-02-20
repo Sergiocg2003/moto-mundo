@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import axios from "axios"
 import headerLogin from "./HeaderLogin.vue";
     export default{
         name: 'mainLogin',
@@ -55,17 +56,22 @@ import headerLogin from "./HeaderLogin.vue";
                         if(expRegUsuario.test(this.usuario)){
                             if(this.contraseña == this.contraseña2){
                                 if(expRegContraseña.test(this.contraseña)){
-                                    localStorage.setItem("Correo", this.correo)
                                     localStorage.setItem("Usuario", this.usuario)
-                                    localStorage.setItem("Moto", this.moto)
                                     this.$router.push("/registrado")
 
-                                    // const NuevoUsuario = {
-                                    //     "correo": this.correo,
-                                    //     "usuario": this.usuario,
-                                    //     "contraseña": this.contraseña,
-                                    //     "moto": this.moto
-                                    // }
+                                    const NuevoUsuario = {
+                                        "correo": this.correo,
+                                        "usuario": this.usuario,
+                                        "contraseña": this.contraseña,
+                                        "moto": this.moto
+                                    }
+
+                                    axios.post("http://localhost:3001/api/v1/users", NuevoUsuario)
+                                        .then(function (response){
+                                            console.log(response)
+                                        })
+                                    this.$router.push("/Registrado")
+
                                     // await fetch("http://localhost:3001/api/v1/users", {
                                     //     method: 'post', 
                                     //     headers: {'Content-type': 'application/json'},

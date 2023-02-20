@@ -1,5 +1,4 @@
-/*Aqui le estamos dando el estilo a los elementos que forman la vista de la moto*/
-.MotoRegistrado{
+.Perfil{
     height: 77vh;
     display: flex;
     flex-flow: row wrap;
@@ -27,19 +26,15 @@
             }
         }
     }
-    
+
     &__Contenedor{
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
         align-items: center;
-        width: 1000px;
-        &__imagen{
-            width: 50%;
-        }
+        width: 500px;
         &__listado{
             list-style: none;
-            width: 50%;
         }
     }
 

@@ -9,6 +9,8 @@ import moto from './components/Moto.vue'
 import registrado from './components/Registrado.vue'
 import listadoReg from './components/ListadoRegistrado.vue'
 import motoRegistrado from './components/MotoRegistrado.vue'
+import perfil from './components/Perfil.vue'
+import buscadorAmigos from './components/BuscadorAmigos.vue'
 
 const routes = [
   { path:'/', component: mainPrincipal },
@@ -18,7 +20,9 @@ const routes = [
   { path:'/moto/:nombre', component: moto },
   { path:'/registrado', component: registrado },
   { path:'/listadoRegistrado', component: listadoReg },
-  { path:'/motoRegistrado/:nombre', component: motoRegistrado}
+  { path:'/motoRegistrado/:nombre', component: motoRegistrado },
+  { path:'/perfil', component: perfil },
+  { path:'/BuscadorAmigos', component: buscadorAmigos}
 
 ]
 

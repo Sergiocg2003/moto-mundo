@@ -3,9 +3,9 @@
     <main class="ListadoRegistrado">
         <div class="ListadoRegistrado__Menu">
             <ul>
-                <li>Perfil</li>
+                <li><router-link to="/perfil">Perfil</router-link></li>
                 <li><router-link to="/listadoRegistrado">Listado</router-link></li>
-                <li>Buscador de Usuario</li>
+                <li><router-link to="/BuscadorAmigos">Buscador de Usuario</router-link></li>
                 <li>Crear club</li>
             </ul>
         </div>

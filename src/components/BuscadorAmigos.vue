@@ -10,10 +10,10 @@
             </ul>
         </div>
         <div class="Registrado__Contenedor">
-            <h1 class="Registrado__Contenedor__Titulo">Buscador de motos:</h1>
+            <h1 class="Registrado__Contenedor__Titulo">Buscador de amigos:</h1>
             <ul class="Registrado__Contenedor__Buscador">
-                <li><input v-model="modelo" type="text" name='nombre' placeholder='Modelo de una moto'/></li>
-                <li><router-link :to="{path: `/motoRegistrado/${modelo}`, params: {nombre: modelo}}"><img src="../assets/lupa.png" /></router-link></li>
+                <li><input v-model="nombre" type="text" name='nombre' placeholder='Nombre de usuario'/></li>
+                <li><a><img src="../assets/lupa.png" /></a></li>
             </ul>
         </div>
         <div class="Registrado__Vacio"></div>
@@ -31,13 +31,19 @@
         },
         data(){
             return{
-                modelo: "",
+                nombre: "",
+                info: []
             };
         },
         watch:{
             modelo: function(){
-                this.$root.$emit("send",this.modelo)
+                this.$root.$emit("send",this.nombre)
             }
+        },
+        async mounted(){
+            await fetch(`http://localhost:3001/api/v1/users/${this.nombre}`)
+                .then((response) => response.json())
+                .then((data) => (this.info = data));
         }
     }
 </script>
