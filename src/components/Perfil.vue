@@ -17,6 +17,10 @@
                 <li class="Perfil__Contenedor__listado__elemento">Amigos: {{ info.amigos }}</li>
                 <li class="Perfil__Contenedor__listado__elemento">Moto: {{ info.moto }}</li>
             </ul>
+            <div class="Perfil__Contenedor__botones">
+                <a class="Perfil__Contenedor__botones__boton" @click="$event => CerrarSesion()">Cerrar Sesion</a>
+                <a class="Perfil__Contenedor__botones__boton" @click="$event => BorrarUsuario(info.usuario)">Borrar usuario</a>
+            </div>
         </div>
         <div class="Perfil__Vacio"></div>
         <img class="Perfil__Imagen" src="../assets/logo.png" /> 
@@ -24,7 +28,8 @@
 </template>
 
 <script>
-    import headerLogueado from "./HeaderLogueado.vue";
+    import axios from "axios";
+import headerLogueado from "./HeaderLogueado.vue";
     export default{
         name: 'mainMotoRegistrado',
         components: {
@@ -40,6 +45,17 @@
             await fetch(`http://localhost:3001/api/v1/users/${url}`)
                 .then((response) => response.json())
                 .then((data) => (this.info = data));
+        },
+        methods: {
+            BorrarUsuario(nombre){
+                axios.delete(`http://localhost:3001/api/v1/users/${nombre}`)
+                localStorage.removeItem("Usuario")
+                this.$router.push("/")
+            },
+            CerrarSesion(){
+                localStorage.removeItem("Usuario")
+                this.$router.push("/")
+            }
         }
     }
 </script>
