@@ -21,6 +21,10 @@
             margin-top:20px;
             li{
                 margin-bottom: 10px;
+                a{
+                    text-decoration: none;
+                    color: $color-letra-cuerpo;
+                }
             }
         }
     }

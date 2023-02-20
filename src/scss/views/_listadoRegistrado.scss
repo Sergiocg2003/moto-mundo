@@ -1,0 +1,77 @@
+/*Aqui le estamos dando el estilo a los elementos que forman el listado*/
+.ListadoRegistrado{
+    height: 77vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    
+    &__Menu{
+        flex-flow: column wrap;
+        background-color: $color-primario;
+        height: 100%;
+        width: 15%;
+        ul{
+            list-style: none;
+            margin: 10px;
+            margin-top:20px;
+            li{
+                margin-bottom: 10px;
+                a{
+                    text-decoration: none;
+                    color: $color-letra-cuerpo;
+                }
+            }
+        }
+    }
+
+    /*Este elemento lo estamos usando para darle la posibilidad de hacer scroll a la lista*/
+    &__contenedor{
+        height: 500px;
+        width: 700px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        overflow-y: scroll;
+        z-index: 1;
+
+        /*Aqui le estamos dando un estilo a los elementos que forman la lista es decir a los diferentes campos de esta*/
+        &__carta{
+            width: 10rem;
+            height: 9rem;
+            margin-bottom: 10px;
+            background-color: $color-primario;
+            
+            &__foto{
+                width: 70%;
+                margin-left: 25px;
+                margin-top: 20px;
+                color: $color-letra-cuerpo;
+            }
+            &__nombre{
+                margin-top: 5px;
+                font-family: $fuente;
+                text-align: center;
+                color: $color-letra-cuerpo;
+            }
+        }
+        &__Vacio{
+            height: 100%;
+            width: 15%;
+        }
+    }
+
+    /*Aqui estamos modificando la imagen que vemos en el fondo de nuestra pagina*/
+    &__Imagen{
+        position: absolute;
+        width: 300px;
+        right: 0px;
+        top: 250px;
+        z-index: 0;
+
+        opacity: 0.37;
+    }
+}

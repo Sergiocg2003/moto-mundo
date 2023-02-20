@@ -7,6 +7,8 @@ import registro from './components/Registro.vue'
 import listado from './components/Listado.vue'
 import moto from './components/Moto.vue'
 import registrado from './components/Registrado.vue'
+import listadoReg from './components/ListadoRegistrado.vue'
+import motoRegistrado from './components/MotoRegistrado.vue'
 
 const routes = [
   { path:'/', component: mainPrincipal },
@@ -14,7 +16,10 @@ const routes = [
   { path:'/registro', component: registro },
   { path:'/listado', component: listado },
   { path:'/moto/:nombre', component: moto },
-  { path:'/registrado', component: registrado}
+  { path:'/registrado', component: registrado },
+  { path:'/listadoRegistrado', component: listadoReg },
+  { path:'/motoRegistrado/:nombre', component: motoRegistrado}
+
 ]
 
 const router = createRouter({
