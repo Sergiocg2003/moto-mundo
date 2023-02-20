@@ -1,4 +1,4 @@
-/*Aqui encontramos el css referentes al main del body junto con su variantes para móvil de la pagina principal*/
+/*Aqui encontramos el css referentes al main del body de la pagina principal*/
 
 .Principal{
     height: 77vh;
@@ -49,6 +49,7 @@
                 border-radius: 0px 50px 50px 0px;
                 border: solid 2px;
                 background-color: $color-primario;
+                text-decoration: none;
                 &:hover{
                     background-color: $color-hover;
                     transition-property: all;

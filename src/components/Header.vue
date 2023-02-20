@@ -7,7 +7,6 @@
         <nav class="main__navegacion">
             <ul>
                 <li class="main__navegacion__opcion"><router-link to="/listado">Listado</router-link></li>
-                <li class="main__navegacion__opcion"><router-link to="/contacto">Contacto</router-link></li>
                 <li class="main__navegacion__opcion"><router-link to="/login">Login</router-link></li>
             </ul>
         </nav>

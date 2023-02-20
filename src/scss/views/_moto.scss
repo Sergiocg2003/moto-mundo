@@ -1,0 +1,36 @@
+/*Aqui le estamos dando el estilo a los elementos que forman la vista de la moto*/
+.PrincipalMoto{
+    height: 77vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    
+    &__Contenedor{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        width: 1000px;
+        &__imagen{
+            width: 50%;
+        }
+        &__listado{
+            list-style: none;
+            width: 50%;
+        }
+    }
+
+    /*Aqui estamos modificando la imagen que vemos en el fondo de nuestra pagina*/
+    &__Imagen{
+        position: absolute;
+        width: 300px;
+        right: 0px;
+        top: 250px;
+        z-index: 0;
+
+        opacity: 0.37;
+    }
+}
