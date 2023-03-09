@@ -1,23 +1,14 @@
 # moto-mundo
 
-## Project setup
+## Poner a funcionar el proyecto en local
 ```
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
-
-### Compiles and minifies for production
+## Enlace desplegado
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+https://moto-mundo.netlify.app/
 ```
 
 ### Customize configuration
