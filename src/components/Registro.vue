@@ -30,6 +30,21 @@
 <script>
 import axios from "axios"
 import headerLogin from "./HeaderLogin.vue";
+    /**
+     * @file Registro.vue - Componente que contiene el main de registro de nuestra web
+     * @author Sergio Corrales Gonzalez
+     * @see <a href="https://github.com/Sergiocg2003/moto-mundo.git" target="_blank">Github</a>
+     */
+    /**
+     * @property {string} name - Nombre del componente
+     * @property {Object} components.headerLogin - Componente Header
+     * @vue-data {Array} errors - Errores
+     * @vue-data {string} correo - Correo intoducido
+     * @vue-data {string} usuario - Nombre de usuario intoducido
+     * @vue-data {string} contraseña - Contraseña introducida
+     * @vue-data {string} contraseña2 - Contraseña introducida
+     * @vue-data {string} moto - Moto introducida
+    */
     export default{
         name: 'mainLogin',
         components:{

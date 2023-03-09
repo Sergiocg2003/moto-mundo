@@ -29,7 +29,17 @@
 
 <script>
     import axios from "axios";
-import headerLogueado from "./HeaderLogueado.vue";
+    import headerLogueado from "./HeaderLogueado.vue";
+    /**
+     * @file Perfil.vue - Componente que contiene el main de la pagina de perfil
+     * @author Sergio Corrales Gonzalez
+     * @see <a href="https://github.com/Sergiocg2003/moto-mundo.git" target="_blank">Github</a>
+     */
+    /**
+     * @property {string} name - Nombre del componente
+     * @property {Object} components.headerLogueado - Componente Header
+     * @vue-data {Array} info - Informacion del usuario
+    */
     export default{
         name: 'mainMotoRegistrado',
         components: {

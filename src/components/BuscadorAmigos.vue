@@ -24,6 +24,17 @@
 
 <script>
     import headerLogueado from "./HeaderLogueado.vue";
+    /**
+     * @file BuscadorAmigos.vue - Componente que contiene el main de la pagina para buscar amigos
+     * @author Sergio Corrales Gonzalez
+     * @see <a href="https://github.com/Sergiocg2003/moto-mundo.git" target="_blank">Github</a>
+     */
+    /**
+     * @property {string} name - Nombre del componente
+     * @property {Object} components.headerLogueado - Componente Header
+     * @vue-data {string} nombre - Nombre del club introducido
+     * @vue-data {Array} existe - Informacion del usuario buscado
+    */
     export default{
         name: 'mainRegistrado',
         components: {

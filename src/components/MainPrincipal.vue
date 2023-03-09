@@ -13,6 +13,16 @@
 
 <script>
     import headerBasico from "./Header.vue";
+    /**
+     * @file MainPrincipal.vue - Componente que contiene el main principal de nuestra web
+     * @author Sergio Corrales Gonzalez
+     * @see <a href="https://github.com/Sergiocg2003/moto-mundo.git" target="_blank">Github</a>
+     */
+    /**
+     * @property {string} name - Nombre del componente
+     * @property {Object} components.headerBasico - Componente Header
+     * @vue-data {string} modelo - Modelo escrito
+    */
     export default{
         name: 'mainPrincipal',
         components: {

@@ -24,6 +24,16 @@
 
 <script>
     import headerLogueado from "./HeaderLogueado.vue";
+    /**
+     * @file ListadoRegistrado.vue - Componente que contiene el main del listado de nuestra pagina estando logueado
+     * @author Sergio Corrales Gonzalez
+     * @see <a href="https://github.com/Sergiocg2003/moto-mundo.git" target="_blank">Github</a>
+     */
+    /**
+     * @property {string} name - Nombre del componente
+     * @property {Object} components.headerLogueado - Componente Header
+     * @vue-data {Array} motos - Informacion de las motos
+    */
     export default{
         name: 'mainListadoLogueado',
         components: {

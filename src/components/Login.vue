@@ -24,6 +24,20 @@
 <script>
     import headerLogin from "./HeaderLogin.vue";
     const md5 = require("md5")
+    /**
+     * @file Login.vue - Componente que contiene el main de logueo de nuestra web
+     * @author Sergio Corrales Gonzalez
+     * @see <a href="https://github.com/Sergiocg2003/moto-mundo.git" target="_blank">Github</a>
+     */
+    /**
+     * @property {string} name - Nombre del componente
+     * @property {Object} components.headerLogin - Componente Header
+     * @vue-data {Array} errors - Errores
+     * @vue-data {Array} autentico - Informacion del usuario de la base de datos
+     * @vue-data {string} usuario - Nombre de usuario intoducido
+     * @vue-data {string} contraseña - Contraseña introducida
+     * @vue-data {string} cifrada - Contraseña introducida tras cifrarla
+    */
     export default{
         name: 'mainLogin',
         components:{

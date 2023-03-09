@@ -31,6 +31,19 @@
 <script>
 import axios from "axios";
 import headerLogueado from "./HeaderLogueado.vue";
+    /**
+     * @file CrearClub.vue - Componente que contiene el main de la pagina para crear un club
+     * @author Sergio Corrales Gonzalez
+     * @see <a href="https://github.com/Sergiocg2003/moto-mundo.git" target="_blank">Github</a>
+     */
+    /**
+     * @property {string} name - Nombre del componente
+     * @property {Object} components.headerLogueado - Componente Header
+     * @vue-data {Array} errors - Errores
+     * @vue-data {string} nombre - Nombre del club introducido
+     * @vue-data {string} descripcion - Descripcion del club introducido
+     * @vue-data {Array} existe - Informacion de un club que ya existe
+    */
     export default{
         name: 'mainLogin',
         components:{

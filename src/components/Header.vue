@@ -14,6 +14,14 @@
 </template>
 
 <script>
+    /**
+     * @file Header.vue - Componente que contiene el header basico de la aplicación
+     * @author Sergio Corrales Gonzalez
+     * @see <a href="https://github.com/Sergiocg2003/moto-mundo.git" target="_blank">Github</a>
+     */
+    /**
+     * @property {string} name - Nombre del componente
+     */
     export default{
         name: 'headerComponente'
     } 

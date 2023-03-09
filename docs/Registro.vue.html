@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Registro.vue</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Registro.vue</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>&lt;template>
+    &lt;headerLogin/>
+    &lt;main class="registroycontacto">
+        &lt;form class="registroycontacto__formulario" @submit="checkForm">
+            &lt;p v-if="errors.length">
+                &lt;b>Por favor, corrija el/los siguiente(s) error(es)&lt;/b>
+                &lt;ul>
+                    &lt;li v-for="error in errors" :key="error">{{ error }}&lt;/li>
+                &lt;/ul>
+            &lt;/p>
+            &lt;p class="registroycontacto__formulario__texto">Correo:&lt;/p>
+            &lt;input class="registroycontacto__formulario__rellenable" type="text" v-model="correo" name="correo" placeholder="ejemplo@ejemplo.com" required/>
+            &lt;p class="registroycontacto__formulario__texto">Usuario:&lt;/p>
+            &lt;input class="registroycontacto__formulario__rellenable" type="text" v-model="usuario" name="usuario" placeholder="Usuario min 3 caracteres" required/>
+            &lt;p class="registroycontacto__formulario__texto">Contraseña:&lt;/p>
+            &lt;input class="registroycontacto__formulario__rellenable" type="password" v-model="contraseña" name="contraseña" placeholder="Contraseña min 8 caracteres" required/>
+            &lt;p class="registroycontacto__formulario__texto">Repite la contraseña:&lt;/p>
+            &lt;input class="registroycontacto__formulario__rellenable" type="password" v-model="contraseña2" name="contraseña2" placeholder="Contraseña min 8 caracteres" required/>
+            &lt;p class="registroycontacto__formulario__texto">Moto:&lt;/p>
+            &lt;input class="registroycontacto__formulario__rellenable" type="text" v-model="moto" name="moto" placeholder="mt-125" required/>
+            &lt;button type="submit" class="registroycontacto__formulario__boton">Enviar&lt;/button>
+        &lt;/form>
+
+        &lt;p class="registroycontacto__opcion">Si ya tienes cuenta, &lt;router-link to="/login">Inicia Sesión&lt;/router-link>&lt;/p>
+
+        &lt;img class="registroycontacto__Imagen" src="../assets/logo.png" />
+    &lt;/main>
+&lt;/template>
+
+&lt;script>
+import axios from "axios"
+import headerLogin from "./HeaderLogin.vue";
+    /**
+     * @file Registro.vue - Componente que contiene el main de registro de nuestra web
+     * @author Sergio Corrales Gonzalez
+     * @see &lt;a href="https://github.com/Sergiocg2003/moto-mundo.git" target="_blank">Github&lt;/a>
+     */
+    /**
+     * @property {string} name - Nombre del componente
+     * @property {Object} components.headerLogin - Componente Header
+     * @vue-data {Array} errors - Errores
+     * @vue-data {string} correo - Correo intoducido
+     * @vue-data {string} usuario - Nombre de usuario intoducido
+     * @vue-data {string} contraseña - Contraseña introducida
+     * @vue-data {string} contraseña2 - Contraseña introducida
+     * @vue-data {string} moto - Moto introducida
+    */
+    export default{
+        name: 'mainLogin',
+        components:{
+            headerLogin
+        },
+        data(){
+            return{
+                errors: [],
+                correo: null,
+                usuario: null,
+                contraseña: null,
+                contraseña2: null,
+                moto: null
+            }
+        },
+        methods:{
+            checkForm: async function(e){
+                const expRegCorreo = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+$/g
+                const expRegUsuario = /^[A-Za-z0-9]{3,12}$/g
+                const expRegContraseña = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&amp;*()_-]).{8,18}$/
+                this.errors = [];
+                if(this.correo &amp;&amp; this.usuario &amp;&amp; this.contraseña &amp;&amp; this.contraseña2 &amp;&amp; this.moto){
+                    if(expRegCorreo.test(this.correo)){
+                        if(expRegUsuario.test(this.usuario)){
+                            if(this.contraseña == this.contraseña2){
+                                if(expRegContraseña.test(this.contraseña)){
+                                    localStorage.setItem("Usuario", this.usuario)
+
+                                    const NuevoUsuario = {
+                                        "correo": this.correo,
+                                        "usuario": this.usuario,
+                                        "contraseña": this.contraseña,
+                                        "moto": this.moto
+                                    }
+
+                                    axios.post("http://localhost:3001/api/v1/users", NuevoUsuario)
+                                        .then(function (response){
+                                            console.log(response)
+                                        })
+                                    this.$router.push("/Registrado")
+
+                                    // await fetch("http://localhost:3001/api/v1/users", {
+                                    //     method: 'post', 
+                                    //     headers: {'Content-type': 'application/json'},
+                                    //     body: JSON.stringify(NuevoUsuario)})
+                                    //         .then(response => response.json())
+                                    //         .then(data => {
+                                    //             if(Object.keys(data).length > 1){
+                                    //                 this.$router.push("/")
+                                    //             }
+                                    //             else{
+                                    //                 this.errors.push(data.message)
+                                    //             }
+                                    //         })
+                                }
+                                else{
+                                    this.errors.push('La contraseña no cumple los requisitos')
+                                }
+                            }
+                            else{
+                                this.errors.push('Las contraseñas no coinciden')
+                            }
+                        }
+                        else{
+                            this.errors.push('El usuario no es valido')
+                        }
+                    }
+                    else{
+                        this.errors.push('El correo no es valido')
+                    }
+                }
+                else{
+                    if(!this.correo || !expRegCorreo.test(this.correo)){
+                        this.errors.push('El correo es obligatorio o no es valido')
+                    }
+                    if(!this.usuario || !expRegUsuario.test(this.usuario)){
+                        this.errors.push('El usuario es obligatorio o no es valido')
+                    }
+                    if(!this.contraseña || !expRegContraseña.test(this.contraseña)){
+                        this.errors.push('La contraseña es obligatoria o no cumple los requisitos')
+                    }
+                    if(!this.contraseña2 || !expRegContraseña.test(this.contraseña)){
+                        this.errors.push('La contraseña es obligatoria o no cumple los requisitos')
+                    }
+                    if(!this.moto){
+                        this.errors.push('La moto es obligatoria')
+                    }
+                }
+                e.preventDefault()
+            }
+        }
+    } 
+&lt;/script></code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-BuscadorAmigos.html">BuscadorAmigos</a></li><li><a href="module-CrearClub.html">CrearClub</a></li><li><a href="module-Footer.html">Footer</a></li><li><a href="module-Header.html">Header</a></li><li><a href="module-HeaderLogin.html">HeaderLogin</a></li><li><a href="module-HeaderLogueado.html">HeaderLogueado</a></li><li><a href="module-Listado.html">Listado</a></li><li><a href="module-ListadoRegistrado.html">ListadoRegistrado</a></li><li><a href="module-Login.html">Login</a></li><li><a href="module-MainPrincipal.html">MainPrincipal</a></li><li><a href="module-Moto.html">Moto</a></li><li><a href="module-MotoRegistrado.html">MotoRegistrado</a></li><li><a href="module-Perfil.html">Perfil</a></li><li><a href="module-Registrado.html">Registrado</a></li><li><a href="module-Registro.html">Registro</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Mar 09 2023 20:54:10 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

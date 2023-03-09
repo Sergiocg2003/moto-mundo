@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: CrearClub.vue</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: CrearClub.vue</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>&lt;template>
+    &lt;headerLogueado/>
+    &lt;main class="crearClub">
+        &lt;div class="crearClub__Menu">
+            &lt;ul>
+                &lt;li>&lt;router-link to="/perfil">Perfil&lt;/router-link>&lt;/li>
+                &lt;li>&lt;router-link to="/listadoRegistrado">Listado&lt;/router-link>&lt;/li>
+                &lt;li>&lt;router-link to="/BuscadorAmigos">Buscador de Usuario&lt;/router-link>&lt;/li>
+                &lt;li>&lt;router-link to="/CrearClub">Crear Club&lt;/router-link>&lt;/li>
+            &lt;/ul>
+        &lt;/div>
+        &lt;form class="crearClub__formulario" @submit="checkForm">
+            &lt;p v-if="errors.length">
+                &lt;b>Por favor, corrija el/los siguiente(s) error(es)&lt;/b>
+                &lt;ul>
+                    &lt;li v-for="error in errors" :key="error">{{ error }}&lt;/li>
+                &lt;/ul>
+            &lt;/p>
+            &lt;p class="crearClub__formulario__Titulo">Crea tu propio club motero&lt;/p>
+            &lt;p class="crearClub__formulario__texto">Nombre:&lt;/p>
+            &lt;input class="crearClub__formulario__rellenable" type="text" v-model="nombre" name="nombre" placeholder="Nombre del club" required/>
+            &lt;p class="crearClub__formulario__texto">Descripcion:&lt;/p>
+            &lt;input class="crearClub__formulario__explicacion" type="text" v-model="descripcion" name="descripcion" placeholder="Descripcion del club" required/>
+            &lt;button type="submit" class="crearClub__formulario__boton">Crear&lt;/button>
+        &lt;/form>
+        &lt;div class="crearClub__Vacio">&lt;/div>
+        &lt;img class="crearClub__Imagen" src="../assets/logo.png" />
+    &lt;/main>
+&lt;/template>
+
+&lt;script>
+import axios from "axios";
+import headerLogueado from "./HeaderLogueado.vue";
+    /**
+     * @file CrearClub.vue - Componente que contiene el main de la pagina para crear un club
+     * @author Sergio Corrales Gonzalez
+     * @see &lt;a href="https://github.com/Sergiocg2003/moto-mundo.git" target="_blank">Github&lt;/a>
+     */
+    /**
+     * @property {string} name - Nombre del componente
+     * @property {Object} components.headerLogueado - Componente Header
+     * @vue-data {Array} errors - Errores
+     * @vue-data {string} nombre - Nombre del club introducido
+     * @vue-data {string} descripcion - Descripcion del club introducido
+     * @vue-data {Array} existe - Informacion de un club que ya existe
+    */
+    export default{
+        name: 'mainLogin',
+        components:{
+            headerLogueado
+        },
+        data(){
+            return{
+                errors: [],
+                nombre: null,
+                descripcion: null,
+                existe: []
+            }
+        },
+        methods:{
+            checkForm: async function(e){
+                this.errors = [];
+                const nombre = this.nombre
+                console.log(nombre)
+                console.log(this.descripcion)
+                await fetch(`http://localhost:3001/api/v1/clubs/${nombre}`)
+                    .then((response) => response.json())
+                    .then((data) => (this.existe = data));
+                if(nombre == this.existe.nombre){
+                    this.errors.push('El nombre del club ya esta usado')
+                }
+                else{
+                    if(!this.descripcion){
+                        this.errors.push('No hay descripcion')
+                    }
+                    else{
+                        const NuevoClub = {
+                        "nombre": this.nombre,
+                        "descripcion": this.descripcion
+                        }
+
+                        console.log(NuevoClub)
+
+                        axios.post("http://localhost:3001/api/v1/clubs", NuevoClub)
+                            .then(function (response){
+                                console.log(response)
+                            })
+                        this.$router.push("/Registrado")
+                    }
+                }
+                e.preventDefault()
+            }
+        }
+    } 
+&lt;/script></code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-BuscadorAmigos.html">BuscadorAmigos</a></li><li><a href="module-CrearClub.html">CrearClub</a></li><li><a href="module-Footer.html">Footer</a></li><li><a href="module-Header.html">Header</a></li><li><a href="module-HeaderLogin.html">HeaderLogin</a></li><li><a href="module-HeaderLogueado.html">HeaderLogueado</a></li><li><a href="module-Listado.html">Listado</a></li><li><a href="module-ListadoRegistrado.html">ListadoRegistrado</a></li><li><a href="module-Login.html">Login</a></li><li><a href="module-MainPrincipal.html">MainPrincipal</a></li><li><a href="module-Moto.html">Moto</a></li><li><a href="module-MotoRegistrado.html">MotoRegistrado</a></li><li><a href="module-Perfil.html">Perfil</a></li><li><a href="module-Registrado.html">Registrado</a></li><li><a href="module-Registro.html">Registro</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Mar 09 2023 20:54:10 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

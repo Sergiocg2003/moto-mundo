@@ -20,6 +20,16 @@
 
 <script>
     import headerBasico from "./Header.vue";
+    /**
+     * @file Moto.vue - Componente que contiene el main de la visualizacion de una moto de nuestra pagina
+     * @author Sergio Corrales Gonzalez
+     * @see <a href="https://github.com/Sergiocg2003/moto-mundo.git" target="_blank">Github</a>
+     */
+    /**
+     * @property {string} name - Nombre del componente
+     * @property {Object} components.headerBasico - Componente Header
+     * @vue-data {Array} moto - Informacion de la moto
+    */
     export default{
         name: 'mainMoto',
         components: {
