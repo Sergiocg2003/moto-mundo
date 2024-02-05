@@ -48,5 +48,66 @@
                 color: $color-letra;
             }
         }
+        &__menu{
+            display: none;
+        }
+    }
+}
+@media (max-width:580px) {
+    .main{
+        height: 13vh;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $color-primario;
+    
+        /*Aqui le damos un tamaño a las imagenes de los logos y una posicion con los margenes*/
+        &__logos{
+            width: 282px;
+            height: 90px;
+            margin-left: 20px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            align-items: center;
+    
+            &__enlace{
+                text-decoration: none;
+                width: 66px;
+                height: 71px;
+                &__logo{
+                    height: 100%;
+                }
+            }
+    
+            &__nombre{
+                font-family: $fuenteTitulo;
+                font-weight: bold;
+                font-size: 30px;
+                width: 216px;
+            }
+        }
+        
+        /*En esta parte le damos los estilos y el posicionamiento a nuestro menú de navegación*/
+        &__navegacion{
+            margin-inline-end: 2%;
+            &__opcion{
+                display: none;
+                font-size: 20px;
+                padding-left: 5px;
+                padding-right: 10px;
+                a{
+                    font-family: Roboto, sans-serif;
+                    text-decoration: none;
+                    color: $color-letra;
+                }
+            }
+            &__menu{
+                display: flex;
+                width: 75px;
+                height: 75px;
+            }
+        }
     }
 }

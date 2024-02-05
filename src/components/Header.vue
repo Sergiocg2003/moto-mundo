@@ -9,6 +9,7 @@
                 <li class="main__navegacion__opcion"><router-link to="/listado">Listado</router-link></li>
                 <li class="main__navegacion__opcion"><router-link to="/login">Login</router-link></li>
             </ul>
+            <img class="main__navegacion__menu" src="../assets/menu.png" alt="menu desplegable">
         </nav>
     </header>
 </template>
