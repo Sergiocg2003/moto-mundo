@@ -118,9 +118,9 @@
                     padding: 6px;
                     display: inherit;
                     border-radius: 0px 40px 40px 0px;
-                    background-color: #FECA1B;
+                    background-color: $color-primario;
                     &:hover{
-                        background-color:#FF950F;
+                        background-color:$color-hover;
                         transition-property: all;
                         transition-duration: 0.5s;
                         transition-timing-function: linear;
