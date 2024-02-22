@@ -51,6 +51,9 @@
         &__menu{
             display: none;
         }
+        &__desplegable{
+            display: none;       
+        }
     }
 }
 @media (max-width:580px) {
@@ -64,7 +67,7 @@
     
         /*Aqui le damos un tamaño a las imagenes de los logos y una posicion con los margenes*/
         &__logos{
-            width: 282px;
+            width: 66px;
             height: 90px;
             margin-left: 20px;
             display: flex;
@@ -86,17 +89,22 @@
                 font-weight: bold;
                 font-size: 30px;
                 width: 216px;
+                display: none;
             }
         }
         
         /*En esta parte le damos los estilos y el posicionamiento a nuestro menú de navegación*/
         &__navegacion{
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+            width: 144px;
             margin-inline-end: 2%;
             &__opcion{
-                display: none;
+                display: inline;
                 font-size: 20px;
-                padding-left: 5px;
-                padding-right: 10px;
+                padding-left: 10px;
+                padding-right: 5px;
                 a{
                     font-family: Roboto, sans-serif;
                     text-decoration: none;
@@ -104,9 +112,22 @@
                 }
             }
             &__menu{
-                display: flex;
+                display: none;
                 width: 75px;
                 height: 75px;
+            }
+            &__desplegable{
+                display: flex;
+                ul{
+                    list-style: none;
+                    li{
+                        a{
+                            text-decoration: none;
+                            color: $color-letra;
+                            font-family: Roboto, sans-serif;
+                        }
+                    }
+                }
             }
         }
     }
