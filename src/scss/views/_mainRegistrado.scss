@@ -9,6 +9,16 @@
     position: relative;
     overflow: hidden;
     background-color: $color-fondo;
+    &__boton{
+        position: absolute;
+        top: 0;
+        left: 0;
+        &__menu{
+            display: none;
+            width: 75px;
+            height: 75px;
+        }
+    }
 
     &__Menu{
         flex-flow: column wrap;
@@ -21,6 +31,28 @@
             margin-top:20px;
             li{
                 margin-bottom: 10px;
+                a{
+                    font-family: $fuente;
+                    text-decoration: none;
+                    color: $color-letra-cuerpo;
+                }
+            }
+        }
+    }
+    &__MenuDesplegable{
+        display: none;
+        flex-flow: column wrap;
+        align-items: center;
+        background-color: $color-primario;
+        height: 100%;
+        width: 100%;
+        ul{
+            list-style: none;
+            margin: 10px;
+            margin-top:75px;
+            li{
+                margin-bottom: 10px;
+                text-align: center;
                 a{
                     font-family: $fuente;
                     text-decoration: none;
@@ -69,7 +101,7 @@
                     padding: 6px;
                     display: inherit;
                     border-radius: 0px 50px 50px 0px;
-                    border: solid 2px;
+                    border: solid 2px black;
                     background-color: $color-primario;
                     text-decoration: none;
                     &:hover{
@@ -101,5 +133,138 @@
         z-index: 0;
 
         opacity: 0.37;
+    }
+}
+@media (max-width:680px) {
+    .Registrado{
+        height: 77vh;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        background-color: $color-fondo;
+        &__boton{
+            position: absolute;
+            top: 0;
+            left: 0;
+            &__menu{
+                display: flex;
+                width: 75px;
+                height: 75px;
+            }
+        }
+    
+        &__Menu{
+            display: none;
+            flex-flow: column wrap;
+            background-color: $color-primario;
+            height: 100%;
+            width: 100%;
+            ul{
+                list-style: none;
+                margin: 10px;
+                margin-top:20px;
+                li{
+                    margin-bottom: 10px;
+                    a{
+                        font-family: $fuente;
+                        text-decoration: none;
+                        color: $color-letra-cuerpo;
+                    }
+                }
+            }
+        }
+        &__MenuDesplegable{
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            background-color: $color-primario;
+            height: 100%;
+            width: 100%;
+            ul{
+                list-style: none;
+                margin: 10px;
+                margin-top:75px;
+                li{
+                    margin-bottom: 10px;
+                    text-align: center;
+                    a{
+                        font-family: $fuente;
+                        text-decoration: none;
+                        color: $color-letra-cuerpo;
+                    }
+                }
+            }
+        }
+    
+        &__Contenedor{
+            text-align: center;
+            width: 100%;
+            /*Con esto le estamos dando un tamaño y un estilo de letra a nuestro titulo de la pagina*/
+            &__Titulo{
+                font-size: 28px;
+                font-family: $fuente;
+                color: $color-letra-cuerpo;
+                z-index: 1;
+            }
+    
+            /*Aqui le damos un estilo al input del buscador y a su boton que son los dos componentes del mismo */
+            &__Buscador{
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: center;
+                li:first-child{
+                    width: 300px;
+                    display: inline;
+                    z-index: 2;
+                    input{
+                        width: 100%;
+                        height: 40px;
+                        border-radius: 40px 0px 0px 40px;
+                        border: solid 2px;
+                        background: $color-buscador;
+                        text-indent: 10px;
+                    }
+                }
+                li:last-child{
+                    display: inline;
+                    a{
+                        width: 40px;
+                        height: 40px;
+                        padding: 6px;
+                        display: inherit;
+                        border-radius: 0px 40px 40px 0px;
+                        background-color: $color-primario;
+                        &:hover{
+                            background-color:$color-hover;
+                            transition-property: all;
+                            transition-duration: 0.5s;
+                            transition-timing-function: linear;
+                        }
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    
+        &__Vacio{
+            display: none;
+            height: 100%;
+            width: 15%;
+        }
+        &__Imagen{
+            position: absolute;
+            width: 150px;
+            right: 0px;
+            z-index: 0;
+    
+            opacity: 0.37;
+        }
     }
 }

@@ -27,6 +27,28 @@
             }
         }
     }
+    &__MenuDesplegable{
+        display: none;
+        flex-flow: column wrap;
+        align-items: center;
+        background-color: $color-primario;
+        height: 100%;
+        width: 100%;
+        ul{
+            list-style: none;
+            margin: 10px;
+            margin-top:75px;
+            li{
+                margin-bottom: 10px;
+                text-align: center;
+                a{
+                    font-family: $fuente;
+                    text-decoration: none;
+                    color: $color-letra-cuerpo;
+                }
+            }
+        }
+    }
     
     &__Contenedor{
         display: flex;
@@ -57,5 +79,87 @@
         z-index: 0;
 
         opacity: 0.37;
+    }
+}
+@media (max-width:580px) {
+    .MotoRegistrado{
+        height: 77vh;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+
+        &__Menu{
+            display: none;
+            flex-flow: column wrap;
+            background-color: $color-primario;
+            height: 100%;
+            width: 15%;
+            ul{
+                list-style: none;
+                margin: 10px;
+                margin-top:20px;
+                li{
+                    margin-bottom: 10px;
+                    a{
+                        font-family: $fuente;
+                        text-decoration: none;
+                        color: $color-letra-cuerpo;
+                    }
+                }
+            }
+        }
+        &__MenuDesplegable{
+            display: none;
+            flex-flow: column wrap;
+            align-items: center;
+            background-color: $color-primario;
+            height: 100%;
+            width: 100%;
+            ul{
+                list-style: none;
+                margin: 10px;
+                margin-top:75px;
+                li{
+                    margin-bottom: 10px;
+                    text-align: center;
+                    a{
+                        font-family: $fuente;
+                        text-decoration: none;
+                        color: $color-letra-cuerpo;
+                    }
+                }
+            }
+        }
+        
+        &__Contenedor{
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            width: 1000px;
+            height: 438px;
+            &__imagen{
+                width: 90%;
+            }
+            &__listado{
+                list-style: none;
+                width: 60%;
+            }
+        }
+        &__Vacio{
+            display: none;
+            height: 100%;
+            width: 15%;
+        }
+        &__Imagen{
+            position: absolute;
+            width: 135px;
+            right: 0px;
+            z-index: -1;
+    
+            opacity: 0.37;
+        }
     }
 }
