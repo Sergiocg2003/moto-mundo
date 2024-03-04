@@ -8,6 +8,17 @@ registro y contacto*/
     align-items: center;
     position: relative;
     overflow: hidden;
+    &__boton{
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        &__menu{
+            display: flex;
+            width: 75px;
+            height: 75px;
+        }
+    }
 
     &__Menu{
         flex-flow: column wrap;
@@ -20,6 +31,28 @@ registro y contacto*/
             margin-top:20px;
             li{
                 margin-bottom: 10px;
+                a{
+                    font-family: $fuente;
+                    text-decoration: none;
+                    color: $color-letra-cuerpo;
+                }
+            }
+        }
+    }
+    &__MenuDesplegable{
+        display: none;
+        flex-flow: column wrap;
+        align-items: center;
+        background-color: $color-primario;
+        height: 100%;
+        width: 100%;
+        ul{
+            list-style: none;
+            margin: 10px;
+            margin-top:75px;
+            li{
+                margin-bottom: 10px;
+                text-align: center;
                 a{
                     font-family: $fuente;
                     text-decoration: none;
@@ -112,5 +145,142 @@ registro y contacto*/
         z-index: 0;
 
         opacity: 0.37;
+    }
+}
+@media (max-width:580px) {
+    .crearClub{
+        height: 77vh;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        &__boton{
+            position: absolute;
+            top: 0;
+            left: 0;
+            &__menu{
+                display: flex;
+                width: 75px;
+                height: 75px;
+            }
+        }
+    
+        &__Menu{
+            display: none;
+            flex-flow: column wrap;
+            background-color: $color-primario;
+            height: 100%;
+            width: 15%;
+            ul{
+                list-style: none;
+                margin: 10px;
+                margin-top:20px;
+                li{
+                    margin-bottom: 10px;
+                    a{
+                        font-family: $fuente;
+                        text-decoration: none;
+                        color: $color-letra-cuerpo;
+                    }
+                }
+            }
+        }
+        &__MenuDesplegable{
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            background-color: $color-primario;
+            height: 100%;
+            width: 100%;
+            ul{
+                list-style: none;
+                margin: 10px;
+                margin-top:75px;
+                li{
+                    margin-bottom: 10px;
+                    text-align: center;
+                    a{
+                        font-family: $fuente;
+                        text-decoration: none;
+                        color: $color-letra-cuerpo;
+                    }
+                }
+            }
+        }
+    
+        /*En este elemento le damos estilo a los elementos que forman nustros formularios ya sea el de contacto o el de login o registro*/
+        &__formulario{
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            text-align: center;
+            &__Titulo{
+                font-size: 30px;
+                font-family: $fuente;
+                margin-bottom: 20px;
+            }
+            &__texto{
+                font-size: 20px;
+                font-family: $fuente;
+            }
+            &__rellenable{
+                width: 80%;
+                height: 40px;
+                margin-bottom: 15px;
+                border-radius: 25px;
+                border: 0;
+                background: $color-buscador;
+                padding: 10px;
+            }
+            &__explicacion{
+                width: 80%;
+                height: 150px;
+                margin-bottom: 15px;
+                border-radius: 25px;
+                border: 0;
+                resize: none;
+                background: $color-buscador;
+                padding: 15px;
+            }
+    
+            /*Aqui se le da estilo al boton que hemos creado para enviar el formulario ademas de darle un estilo a su hover*/
+            &__boton{
+                font-family: $fuente;
+                font-size: 15px;
+                margin-top: 10px;
+                margin-bottom: 30px;
+                padding: 7.5px;
+                display: inherit;
+                border-radius: 10px;
+                border: 0;
+                background-color: $color-primario;
+                &:hover{
+                    background-color: $color-hover;
+                    transition-property: all;
+                    transition-duration: 0.5s;
+                    transition-timing-function: linear;
+                }
+            }
+        }
+    
+        &__Vacio{
+            display: none;
+            height: 100%;
+            width: 15%;
+        }
+    
+        /*Aqui estamos modificando la imagen que vemos en el fondo de nuestra pagina*/
+        &__Imagen{
+            position: absolute;
+            width: 135px;
+            right: 0px;
+            z-index: -1;
+    
+            opacity: 0.37;
+        }
     }
 }

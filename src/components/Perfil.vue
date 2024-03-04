@@ -1,7 +1,18 @@
 <template>
     <headerLogueado/>
     <main class="Perfil">
+        <div @click="toggleMenu" class="Perfil__boton">
+            <img class="Perfil__boton__menu" src="../assets/menu.png" alt="menu desplegable">
+        </div>
         <div class="Perfil__Menu">
+            <ul>
+                <li><router-link to="/perfil">Perfil</router-link></li>
+                <li><router-link to="/listadoRegistrado">Listado</router-link></li>
+                <li><router-link to="/BuscadorAmigos">Buscador de Usuario</router-link></li>
+                <li><router-link to="/CrearClub">Crear Club</router-link></li>
+            </ul>
+        </div>
+        <div class="Perfil__MenuDesplegable" v-show="showMenu">
             <ul>
                 <li><router-link to="/perfil">Perfil</router-link></li>
                 <li><router-link to="/listadoRegistrado">Listado</router-link></li>
@@ -47,7 +58,8 @@
         },
         data(){
             return{
-                info: []
+                info: [],
+                showMenu: false,
             };
         },
         async mounted(){
@@ -65,6 +77,9 @@
             CerrarSesion(){
                 localStorage.removeItem("Usuario")
                 this.$router.push("/")
+            },
+            toggleMenu() {
+                this.showMenu = !this.showMenu;
             }
         }
     }
