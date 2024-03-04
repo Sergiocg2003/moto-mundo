@@ -90,6 +90,16 @@
         align-items: center;
         position: relative;
         overflow: hidden;
+        &__boton{
+            position: absolute;
+            top: 0;
+            left: 0;
+            &__menu{
+                display: flex;
+                width: 75px;
+                height: 75px;
+            }
+        }
 
         &__Menu{
             display: none;
@@ -112,7 +122,7 @@
             }
         }
         &__MenuDesplegable{
-            display: none;
+            display: flex;
             flex-flow: column wrap;
             align-items: center;
             background-color: $color-primario;

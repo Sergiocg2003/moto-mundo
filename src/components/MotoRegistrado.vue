@@ -1,8 +1,8 @@
 <template>
     <headerLogueado/>
     <main class="MotoRegistrado">
-        <div @click="toggleMenu" class="Registrado__boton">
-            <img class="Registrado__boton__menu" src="../assets/menu.png" alt="menu desplegable">
+        <div @click="toggleMenu" class="MotoRegistrado__boton">
+            <img class="MotoRegistrado__boton__menu" src="../assets/menu.png" alt="menu desplegable">
         </div>
         <div class="MotoRegistrado__Menu">
             <ul>
@@ -12,7 +12,7 @@
                 <li><router-link to="/CrearClub">Crear Club</router-link></li>
             </ul>
         </div>
-        <div class="Registrado__MenuDesplegable" v-show="showMenu">
+        <div class="MotoRegistrado__MenuDesplegable" v-show="showMenu">
             <ul>
                 <li><router-link to="/perfil">Perfil</router-link></li>
                 <li><router-link to="/listadoRegistrado">Listado</router-link></li>
